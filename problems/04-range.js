@@ -10,10 +10,37 @@ range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
 
+// let range = (start, end) => {
 
-// your code here
+//   let array = [start]
+//   // base case
+//   if (end < start){
+//     return [];
+//   }
 
+//   debugger
+//   if (array[array.length - 1] === (end - 1)) {
+//     //array.push(array[array.length -1])
+//     return array;
+//     debugger
+//   } else {
+//     // recursive case
+//     debugger
+//     let newEl =  array[array.length -1] + 1
+//     return array.concat(range(newEl, end))
+//   }
 
+// }
+
+let range = (start, end) => {
+  if (end <= start) {
+    return []
+  }
+  return [start, ...range(start+1, end)]
+
+}
+
+console.log(range(1, 5))
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = range;
