@@ -12,7 +12,21 @@ reverse("id"); // "di"
 reverse(""); // ""
 ***********************************************************************/
 
-// your code here
+function reverse(string){
+
+  if(string.length === 0){
+
+    return '';
+
+  }
+
+  const firstLetter = string[0]
+
+  const recurse = reverse(string.slice(1))
+
+  return  recurse + firstLetter
+
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
