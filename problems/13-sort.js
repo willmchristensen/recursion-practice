@@ -23,6 +23,56 @@ sort([]); // []
 
 function sort(nums, sorted = []) {
   // your code here
+
+  if(nums.length === 0){
+
+    return sorted;
+
+  }else{
+
+    let smol = nums[0];
+
+    nums.forEach(element => {
+
+      if(smol > element ){
+
+        smol = element
+
+        // add smallest to front
+
+        // remove & add previous smallest value to end of array
+
+      }
+
+    });
+
+    // add smallest to end
+
+    sorted.push(smol)
+
+    // remove smallest from nums
+    let index = nums.indexOf(smol);
+
+    nums.splice(index,1);
+
+    return sort(nums,sorted)
+
+    //arr.forEach(element => {
+
+  //   if(Array.isArray(element)){
+
+  //     flattened.push(...flatten(element))
+
+  //   }else{
+
+  //     flattened.push(element)
+
+  //   }
+
+  // });
+
+  }
+
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

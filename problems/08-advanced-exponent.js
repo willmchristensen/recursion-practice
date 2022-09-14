@@ -1,15 +1,14 @@
 /***********************************************************************
 Write a more advanced version of the recursive `exponent` function that
 you just wrote. Instead of multiplying the base number by itself n power of
-times, like you did previously, you will be squaring the results of the base
-number raised to the power of half of n power.
+times, like you did previously, you will be
 
 The following is math, not JavaScript:
 
 exponent(b, 0) // 1
 exponent(b, 1) // b
-exponent(b, n) // exponent(b, n / 2) ** 2             [for even n]
-exponent(b, n) // b * (exponent(b, (n - 1) / 2) ** 2) [for odd n]
+exponent(b, n) //   exponent(b, n / 2) ** 2             [for even n]
+exponent(b, n) //   b * (exponent(b, (n - 1) / 2) ** 2) [for odd n]
 
 You will need to square the results of exponent(b, n / 2) and
 (exponent(b, (n - 1) / 2).
@@ -37,12 +36,68 @@ advancedExponent(2, 12); // 4096
 For each of the examples above, figure out how many times your code should
 be recursively calling `advancedExponent`. Find a way to visually see how many
 times `advancedExponent` is being recursively called.
+
+
+squaring the results of the base number raised to the power of half of n power.
 ***********************************************************************/
 
+function advancedExponent(b,n){
 
-function advancedExponent(b, n) {
-  // your code here
+  if( n === 0 ){
+
+    return 1;
+
+  }
+
+  if(n === 1 ){
+
+    return b;
+
+  }
+
+  if(n % 2 === 0){
+
+    return advancedExponent(b, n / 2) ** 2;
+
+  }
+
+    return b * (advancedExponent(b, (n - 1) / 2) ** 2);
+
 }
+
+
+// function advancedExponent(b, n) {
+
+//   if(n === 0){
+
+//     return 1;
+
+//   }
+
+//   if(n === 1){
+
+//     return b;
+
+//   }
+
+//   if(n < 0){
+
+//     return exponent((1/b),-n)
+
+//   }
+
+//   if(n % 2 === 0){
+
+//     return (advancedExponent(b,n/2)) ** 2;
+
+//   }else{
+
+//     return b * (advancedExponent(b,((n-1)/2))) ** 2;
+
+//   }
+
+
+// }
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

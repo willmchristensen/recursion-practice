@@ -2,8 +2,19 @@
 Write a recursive function called `fibonacci` that takes an integer, `n`,
 and returns the `n`th number in the Fibonacci sequence.
 
-Not familiar with the Fibonacci sequence? Beginning with 0 and 1, we add the two
-previous numbers in the sequence together to form the next one:
+Not familiar with the Fibonacci sequence? Beginning with 0 and 1, we
+
+add the two previous numbers in the sequence together
+
+// if n === 3     result === 2
+  // 0 + 1 + 1
+  fibonacci(n) === fibonacci(3) === fib
+  fibonacci(n-1) === fibonacci(2) === 1
+  fibonacci(2-1) === fibonacci(1) === 1
+  return fibonacci(n-1) + fibonacci(n)
+  return fibonacci(2) + fibonacci(2)
+
+to form the next one:
 
 0, 1, 1, 2, 3, 5, 8, etc....
 
@@ -19,12 +30,17 @@ fibonacci(4); // 3
 fibonacci(10); // 55
 ***********************************************************************/
 
-// your code here
-  
+function fibonacci(n){
+
+  if(n < 2) return n;
+
+  return fibonacci(n-1) + fibonacci(n-2);
+
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = fibonacci;
 } catch (e) {
   module.exports = null;
 }
-  

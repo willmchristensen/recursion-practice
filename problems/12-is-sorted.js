@@ -10,7 +10,26 @@ isSorted([2, 4, 6, 7, 8]); // true
 isSorted([5, 4, 3, 2, 1]); // false
 ***********************************************************************/
 
-// your code here
+function isSorted(arr){
+
+  if(arr[0] > arr[1]){
+
+    return false;
+
+  }else if(arr.length > 0){
+
+    return isSorted(arr.slice(1));
+
+  }else{
+
+    return true;
+
+  }
+
+
+}
+// check two eles
+// remove first
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
