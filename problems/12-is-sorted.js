@@ -12,6 +12,31 @@ isSorted([5, 4, 3, 2, 1]); // false
 
 function isSorted(arr){
 
+  // ascending order === arr[0] < arr[1]
+  let firstEle = arr[0];
+  let nextEle = arr[1];
+
+  if(arr.length === 1){
+
+    return true;
+
+  }
+
+  if(nextEle < firstEle){
+
+    return false;
+
+  }
+
+  // if ascending, check if next two
+
+  return isSorted(arr.slice(1))
+
+
+}
+
+function isSorted(arr){
+
   if(arr[0] > arr[1]){
 
     return false;

@@ -36,26 +36,54 @@ console.log(x[0] === y[0]) // true
 
 ***********************************************************************/
 
-let deepDup = (arr) => {
+//copy array
+// memory address differs
+const deepDup = (arr) => {
 
-  let duped = [];z
+  const duped = [];
+  debugger
 
-  if(duped.length === arr.length){
+  arr.forEach(element => {
+    if(Array.isArray(element)){
+      duped.push(deepDup(element))
+      debugger
+    }else{
+      duped.push(element)
+    }
+    debugger
+  });
 
-    return duped;
-
-  }else{
-
-    let lastEle = arr.splice(arr.length - 1,1);
-
-    duped.push(lastEle);
-
-  }
-
-  return deepDup(arr);
-
+  return duped;
 
 }
+
+let arr = [[1], [2, [3]]];
+deepDup(arr); // [[1], [2, [3]]]
+
+// arr[0] === duped[0] // false
+// arr[1] === duped[1] // false
+// arr[1][1] === duped[1][1] // false
+
+// let deepDup = (arr) => {
+
+//   let duped = [];
+
+//   if(duped.length === arr.length){
+
+//     return duped;
+
+//   }else{
+
+//     let lastEle = arr.splice(arr.length - 1,1);
+
+//     duped.push(lastEle);
+
+//   }
+
+//   return deepDup(arr);
+
+
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
